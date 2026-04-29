@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUKE KOPI - Ngopi 24 Jam di Pantai Sinam, Pemangkat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; background-color: #fcfaf8; color: #333; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .hero-bg {
+            background-image: url(gambar/WhatsApp\ Image\ 2026-01-13\ at\ 16.01.59.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efek parallax */
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #d97706; /* orange-700 */
+            border-radius: 9999px;
+        }
+        .menu-category-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            color: #d97706; /* orange-700 */
+        }
+        .menu-category-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #fbbf24; /* amber-400 */
+            border-radius: 9999px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0.75rem 0;
+            border-bottom: 1px dashed #e5e7eb; /* stone-200 */
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .menu-item-name {
+            font-weight: 600; /* font-semibold */
+            color: #444;
+        }
+        .menu-item-price {
+            font-weight: 700; /* font-bold */
+            color: #d97706; /* orange-700 */
+        }
+        .card {
+            background-color: white;
+            border-radius: 1.5rem; /* rounded-3xl */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        .gallery-img {
+            border-radius: 1rem; /* rounded-2xl */
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+            filter: brightness(0.9);
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-3xl font-bold text-[#d97706]">SUKE KOPI</a>
+            <div class="hidden md:flex space-x-8 font-semibold text-lg">
+                <a href="#home" class="text-gray-700 hover:text-[#f97316] transition-colors duration-300">Beranda</a>
+                <a href="#about" class="text-gray-700 hover:text-[#f97316] transition-colors duration-300">Tentang Kami</a>
+                <a href="#menu" class="text-gray-700 hover:text-[#f97316] transition-colors duration-300">Menu</a>
+                <a href="#gallery" class="text-gray-700 hover:text-[#f97316] transition-colors duration-300">Galeri</a>
+                <a href="#contact" class="text-gray-700 hover:text-[#f97316] transition-colors duration-300">Kontak</a>
+            </div>
+            </div>
+    </nav>
+
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10 p-6 max-w-4xl mx-auto">
+            <h1 class="text-6xl md:text-8xl font-extrabold leading-tight drop-shadow-lg mb-4">SUKE KOPI</h1>
+            <p class="text-2xl md:text-3xl font-light italic drop-shadow-md mb-8">
+                Nikmati Kopi Terbaik Sambil Menatap Indahnya Pantai Sinam
+            </p>
+            <a href="#menu" class="bg-[#d97706] hover:bg-[#ea580c] text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg transform hover:scale-105 transition duration-300">Lihat Menu Spesial Kami</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-[#fcfaf8]">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative">
+                    <img src="gambar/WhatsApp Image 2026-01-13 at 16.01.59.jpeg" 
+                         class="rounded-3xl shadow-2xl relative z-10 w-full h-[500px] object-cover border-8 border-white">
+                    <img src="gambar/logo.png" 
+                         class="absolute -top-10 left-1/2 -translate-x-1/2 md:-top-16 md:-left-16 w-40 h-40 object-cover rounded-full shadow-xl border-4 border-white transform hover:scale-110 transition duration-300 cursor-pointer hidden sm:block">
+                
+                </div>
+                <div class="lg:w-1/2 text-left">
+                    <h2 class="text-5xl font-bold text-[#333] mb-6 section-title">Kisah Kami di Pantai Sinam</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                        Didirikan pada 27 Desember 2024, Suke Kopi adalah tempat di mana aroma kopi bertemu dengan semilir angin laut. Terletak strategis di Jln. Moh Sohor, Pantai Sinnam, Pemangkat, Kalimantan Barat, kami bangga menjadi destinasi ngopi favorit Anda. Kami buka 24 Jam setiap hari, siap menemani pagi, siang, sore, hingga malam Anda dengan suasana yang hangat dan penuh inspirasi.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="card p-6 flex items-center gap-4">
+                            <div class="bg-[#fef3c7] p-4 rounded-full text-[#d97706] text-2xl">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-xl text-gray-800">Tahun Berdiri</h3>
+                                <p class="text-gray-600">27 Desember 2024</p>
+                            </div>
+                        </div>
+                        <div class="card p-6 flex items-center gap-4">
+                            <div class="bg-[#fef3c7] p-4 rounded-full text-[#d97706] text-2xl">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-xl text-gray-800">Jam Operasional</h3>
+                                <p class="text-gray-600">Buka 24 Jam Setiap Hari</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-24 bg-gradient-to-br from-[#fff7ed] to-[#ffe5b4]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-[#333] mb-16 section-title">Pilihan Menu Menggoda</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <div class="card p-8 bg-white">
+                    <h3 class="menu-category-title">Coffee Series</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Kopi Susu Gula Aren</span><span class="menu-item-price">18K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Kopi Pandan Gula Aren</span><span class="menu-item-price">20K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Kopi Susu Regal</span><span class="menu-item-price">18K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Kopi Vanilla</span><span class="menu-item-price">19K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Kopi Caramel</span><span class="menu-item-price">20K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Kopi Hazelnut</span><span class="menu-item-price">18K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Kopi Butterscotch</span><span class="menu-item-price">20K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Kopi Susu Milo</span><span class="menu-item-price">18K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Kopi Susu Light</span><span class="menu-item-price">15K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Kopi Salted Caramel</span><span class="menu-item-price">20K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Kopi Susu Lotus Biscoff</span><span class="menu-item-price">24K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Classic Coffee</span><span class="menu-item-price">19K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Coffee Ice</span><span class="menu-item-price">19K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Robusta Ice</span><span class="menu-item-price">16K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Cappuccino</span><span class="menu-item-price">16K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Cappuccino Cincau</span><span class="menu-item-price">18K</span></li>
+                    </ul>
+                </div>
+
+                <div class="card p-8 bg-white">
+                    <h3 class="menu-category-title">Hot Series</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Coffee Milk Robusta</span><span class="menu-item-price">16K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Hot Milo</span><span class="menu-item-price">12K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Hot Chocolate</span><span class="menu-item-price">15K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Hot Fresh Lemonade</span><span class="menu-item-price">12K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Black Coffee</span><span class="menu-item-price">8K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Coffee</span><span class="menu-item-price">10K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Hot Tea</span><span class="menu-item-price">8K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Hot Lemon Tea</span><span class="menu-item-price">12K</span></li>
+                    </ul>
+                    <h3 class="menu-category-title mt-8">Soda Series</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Pink Rose Soda</span><span class="menu-item-price">16K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Green Lychee Soda</span><span class="menu-item-price">16K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Lemonade</span><span class="menu-item-price">16K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Passion Fruit Soda</span><span class="menu-item-price">16K</span></li>
+                    </ul>
+                </div>
+
+                <div class="card p-8 bg-white">
+                    <h3 class="menu-category-title">Milk Tea Series</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Coconut Milk Tea</span><span class="menu-item-price">22K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Boba Milk Tea</span><span class="menu-item-price">22K</span></li>
+                    </ul>
+                    <h3 class="menu-category-title mt-8">Choco Series</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Chocolate Ice</span><span class="menu-item-price">16K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Milo Susu Ice</span><span class="menu-item-price">16K</span></li>
+                    </ul>
+                    <h3 class="menu-category-title mt-8">Milk Series</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Red Velvet Creamy</span><span class="menu-item-price">16K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Banana Vanilla Milk Creamy</span><span class="menu-item-price">19K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Mango Milk Creamy</span><span class="menu-item-price">18K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Strawberry Milk Creamy</span><span class="menu-item-price">18K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">OREO Milk Creamy</span><span class="menu-item-price">20K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Regal Milk Creamy</span><span class="menu-item-price">20K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Milk Biscoff Lotus</span><span class="menu-item-price">24K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Taro Creamy</span><span class="menu-item-price">16K</span></li>
+                    </ul>
+                </div>
+
+                <div class="card p-8 bg-white">
+                    <h3 class="menu-category-title">Fruit Tea Series</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Lychee Tea</span><span class="menu-item-price">16K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Strawberry Jasmine</span><span class="menu-item-price">22K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Kiwi Tea</span><span class="menu-item-price">22K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Blueberry Tea</span><span class="menu-item-price">22K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Mango Fruit</span><span class="menu-item-price">14K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Strawberry Fruit</span><span class="menu-item-price">14K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Lychee Fruit</span><span class="menu-item-price">14K</span></li>
+                    </ul>
+                    <h3 class="menu-category-title mt-8">Fresh Series</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Fresh Lemonade</span><span class="menu-item-price">13K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Fresh Jeruk Peras</span><span class="menu-item-price">18K</span></li>
+                    </ul>
+                </div>
+
+                <div class="card p-8 bg-white">
+                    <h3 class="menu-category-title">Pop Series</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Mango Pop</span><span class="menu-item-price">13K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Lychee Pop</span><span class="menu-item-price">13K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Strawberry Pop</span><span class="menu-item-price">13K</span></li>
+                    </ul>
+                    <h3 class="menu-category-title mt-8">Tea Series</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Thai Tea</span><span class="menu-item-price">16K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Ice Tea</span><span class="menu-item-price">13K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Jasmine Tea</span><span class="menu-item-price">16K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Jasmine Brown Sugar</span><span class="menu-item-price">16K</span></li>
+                    </ul>
+                </div>
+
+                <div class="card p-8 bg-white">
+                    <h3 class="menu-category-title">Latte Series</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Caramel Latte</span><span class="menu-item-price">19K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Taro Latte</span><span class="menu-item-price">22K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Pandan Latte</span><span class="menu-item-price">19K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Matcha Latte</span><span class="menu-item-price">22K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Brown Sugar Latte</span><span class="menu-item-price">19K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Vanilla Latte</span><span class="menu-item-price">19K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Spanish Latte</span><span class="menu-item-price">19K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Coconut Latte</span><span class="menu-item-price">22K</span></li>
+                    </ul>
+                    <h3 class="menu-category-title mt-8">Matcha Series</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Coconut Matcha</span><span class="menu-item-price">22K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Matcha Oreo Cookies</span><span class="menu-item-price">20K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Matcha Lotus</span><span class="menu-item-price">24K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Matcha Creamy</span><span class="menu-item-price">16K</span></li>
+                    </ul>
+                </div>
+
+                <div class="card p-8 bg-white">
+                    <h3 class="menu-category-title">Ocean Series</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Mango Ocean Soda</span><span class="menu-item-price">15K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Strawberry Ocean Soda</span><span class="menu-item-price">15K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Lychee Ocean Soda</span><span class="menu-item-price">15K</span></li>
+                    </ul>
+                    <h3 class="menu-category-title mt-8">Topping</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Cincau</span><span class="menu-item-price">5K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Coconut Jelly</span><span class="menu-item-price">3K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Pop</span><span class="menu-item-price">3K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Oreo</span><span class="menu-item-price">5K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Jelly</span><span class="menu-item-price">5K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Strawberry Pop</span><span class="menu-item-price">3K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Lychee Pop</span><span class="menu-item-price">3K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Boba</span><span class="menu-item-price">5K</span></li>
+                
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+<div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-[#333] mb-16 section-title">Pilihan Menu Makanan</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <div class="card p-8 bg-white">
+                    <h3 class="menu-category-title">Cemilan</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Pisang Goreng Srikaya</span><span class="menu-item-price">18K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Pisang Goreng Original</span><span class="menu-item-price">15K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Roti Panggang Strawberry</span><span class="menu-item-price">15k</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Roti Panggang Blueberry</span><span class="menu-item-price">15K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Roti Panggang Chocolate</span><span class="menu-item-price">15K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Roti Panggang Srikaya</span><span class="menu-item-price">15K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Pisang Goreng Slide</span><span class="menu-item-price">15K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Sosis Goreng</span><span class="menu-item-price">20k</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Kentang Goreng</span><span class="menu-item-price">20K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Singkong Goreng Balado</span><span class="menu-item-price">16K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Singkong Goreng BBQ</span><span class="menu-item-price">16K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Chicken Nugget</span><span class="menu-item-price">20K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Bakso Mekar</span><span class="menu-item-price">20K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Chicken Chiclin</span><span class="menu-item-price">25K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Tahu Crispy</span><span class="menu-item-price">15K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Otak Otak</span><span class="menu-item-price">20K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Bala Bala</span><span class="menu-item-price">15K</span></li>
+                    </ul>
+                </div>
+
+                <div class="card p-8 bg-white">
+                    <h3 class="menu-category-title">Food Menu</h3>
+                    <ul class="space-y-2">
+                        <li class="menu-item"><span class="menu-item-name">Nasi Goreng Ayam</span><span class="menu-item-price">35K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Nasi Goreng Seafood</span><span class="menu-item-price">35K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Nasi Goreng Udang</span><span class="menu-item-price">35K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Mie Goreng Ayam</span><span class="menu-item-price">35K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Mie Goreng Seafood</span><span class="menu-item-price">35K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Bihun Goreng Ayam</span><span class="menu-item-price">35K</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Bihun Goreng Seafood</span><span class="menu-item-price">35K</span></li>
+                    </ul>
+                    </ul>
+                </div>
+
+
+                
+                    <h2 class="text-5xl font-bold text-[#333] mb-16 section-title">MENU SELENGKAPNYA HANYA DI SUKEKOPI PEMANGKAT</h2>
+
+                
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 bg-[#fcfaf8]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-[#333] mb-16 section-title">Jelajahi Suasana Kami</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card overflow-hidden h-72">
+                    <img src="gambar/fto.jpg">
+                </div>
+                <div class="card overflow-hidden h-72 lg:mt-16">
+                    <img src="gambar/skekpi.jpeg">
+                </div>
+                <div class="card overflow-hidden h-72">
+                    <img src="gambar/backgr.jpg">
+                </div>
+                <div class="card overflow-hidden h-72 lg:mt-16">
+                    <img src="gambar/snst3.jpg">
+                </div>
+                <div class="card overflow-hidden h-72">
+                    <img src="gambar/snst.jpg">
+                </div>
+                <div class="card overflow-hidden h-72 lg:mt-16">
+                    <img src="gambar/gbr2.jpeg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer id="contact" class="py-20 bg-[#2d3748] text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-10 section-title text-white">Kunjungi & Hubungi Kami</h2>
+            <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+                Kami menunggu kehadiran Anda di Suke Kopi, nikmati setiap momen dengan kopi terbaik dan pemandangan terindah di Pantai Sinnam.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                <div class="flex flex-col items-center">
+                    <div class="bg-[#d97706] p-4 rounded-full mb-4 text-3xl"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3 class="font-bold text-xl mb-2">Alamat</h3>
+                    <p class="text-gray-300">Jln. Moh Sohor, Pantai Sinnam, Pemangkat, Kalimantan Barat</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-[#d97706] p-4 rounded-full mb-4 text-3xl"><i class="fas fa-phone-alt"></i></div>
+                    <h3 class="font-bold text-xl mb-2">Telepon</h3>
+                    <a href="tel:+6285973300760" class="text-gray-300 hover:text-[#fbbf24] transition">+62 859-7330-0760</a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-[#d97706] p-4 rounded-full mb-4 text-3xl"><i class="fas fa-share-alt"></i></div>
+                    <h3 class="font-bold text-xl mb-2">Ikuti Kami</h3>
+                    <div class="flex space-x-6 text-2xl">
+                        <a href="https://instagram.com/sukekopi_pemangkat" class="text-gray-300 hover:text-[#e1306c] transition"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/suke.kopi.pemangkat" class="text-gray-300 hover:text-[#1877f2] transition"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/6285973300760" class="text-gray-300 hover:text-[#25d366] transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-t border-gray-700 my-12">
+            <p class="
